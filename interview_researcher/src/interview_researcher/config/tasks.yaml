@@ -1,0 +1,20 @@
+research_task:
+  description: >
+    Conduct a thorough research based on:
+        Job Description: {jd_text}
+        Canidate Resume: {candidate_resume_text}
+    Make sure you find any interesting and relevant information which is common in both Job Description and candidate's resume.
+    Include current interesting technology trends in your report.
+  expected_output: >
+    A list with 20 bullet points of the most relevant information on which Question and Answers can be prepared for the candidate's interview.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a report containing 10 short questions and answers.
+    Make sure the report is detailed and contains any and all relevant information.
+    Add top 10 topics names based on the context you received. These topics will be feed to the interviewer for preparing his own questions.
+  expected_output: >
+    A fully fledged QnA report with the solved top 10 questions and other 10 interesting topics to be discussed in interview.
+    Formatted as markdown without '```'
+  agent: reporting_analyst

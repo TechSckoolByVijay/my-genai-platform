@@ -20,6 +20,18 @@ def run():
     }
     InterviewResearcher().crew().kickoff(inputs=inputs)
 
+def run_my_agent(jd_text,candidate_resume_text,temperature,special_instruction):
+    """
+    Run the crew.
+    """
+    inputs = {
+        'jd_text': jd_text,
+        'candidate_resume_text': candidate_resume_text,
+        'temperature': temperature,
+        'special_instruction': special_instruction
+    }
+    return InterviewResearcher().crew().kickoff(inputs=inputs)
+
 
 def train():
     """

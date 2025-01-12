@@ -49,7 +49,7 @@ class InterviewResearcher():
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the InterviewResearcher crew"""
+		"""Creates the InterviewResearcher QnA crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
