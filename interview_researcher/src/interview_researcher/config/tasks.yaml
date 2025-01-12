@@ -1,31 +1,61 @@
 research_task:
   description: >
-    Conduct a thorough research based on:
-      Job Description: {jd_text}
-      -------------------------
-      -------------------------
-      Canidate Resume: {candidate_resume_text}
-      -------------------------
-      -------------------------
-    Make sure you find any interesting and relevant information which is common in both Job Description and candidate's resume.
-    Include current interesting technology trends in your report.
+    Conduct a detailed and comprehensive research to identify relevant and engaging topics for a candidate's interview. Your research is based on the following inputs:
+
+    ---
+    Inputs:
+    - **Job Description:** {jd_text}
+    - **Candidate Resume:** {candidate_resume_text}
+    - **Special Instructions (if applicable):** {special_instruction}
+    ---
+
+    Your goals include:
+    - Identifying areas of overlap between the **Job Description** and the **Candidate Resume**.
+    - Highlighting key skills, experiences, and qualifications relevant to the role.
+    - Incorporating **current technology trends** or industry-specific developments that align with the role.
+    - Ensuring all findings are actionable and can guide the preparation of interview questions.
+
+    Pay special attention to:
+    - The candidate's recent work history and certifications.
+    - Any gaps or mismatches in the resume and job description that may warrant exploratory questions.
+
   expected_output: >
-    A list with 20 bullet points of the most relevant information on which Question and Answers can be prepared for the candidate's interview.
+    Provide a detailed report in the form of:
+    - **20 Bullet Points:** A concise list of the most relevant topics, skills, and trends. These points should be suitable for framing Questions and Answers for the candidate's interview.
+    - Include 70% topics common between the job description and resume, and 30% exploratory or trend-based topics.
+    
+    Format the output clearly to ensure ease of use by the next agent.
+
   agent: researcher
 
 reporting_task:
   description: >
-    Review the context you got and expand each topic into a report containing 10 short questions and answers.
-    Make sure the report is detailed and contains any and all relevant information.
-    Add top 10 topics names based on the context you received. These topics will be feed to the interviewer for preparing his own questions.
+    Analyze the provided context and create a comprehensive QnA report based on the topics it covers. Your goals are as follows:
+
+    1. **Expand Topics into QnA:** For each topic derived from the context, prepare **10 concise and meaningful questions** along with their **answers**. Ensure the QnA set is detailed, accurate, and relevant to the role or subject matter.
+    2. **Suggest Additional Topics:** Identify and list the **top 10 potential topics** based on the context to help interviewers create their own custom questions. These topics should be insightful and aligned with the role.
+
+    Pay attention to:
+    - Clarity and relevance in both questions and answers.
+    - Including examples and details wherever appropriate to make the answers actionable.
+    - Ensuring that the suggested topics encourage creative and meaningful discussions.
+
   expected_output: >
-    A fully fledged QnA report with the solved top 10 questions and other 10 interesting topics to be discussed in interview.
+    Deliver a structured and polished QnA report formatted as markdown without '```'. The report should include:
     
-    Format needed:
-    Question 1: What is your name?
-    Answer: My name is Vijay.
+    ---
+    **Part 1: Solved QnA**
+    - **Question 1:** What is your name?
+      **Answer:** My name is Vijay.
+    - **Question 2:** ...
+    - (Continue until 10 questions and answers for each topic.)
 
-    Question 2: ...
+    **Part 2: Suggested Topics**
+    - Topic 1: [Topic Name]
+    - Topic 2: ...
+    - (List all 10 topics.)
+    ---
+    
+    The output should be well-organized, easy to read, and ready for use by interviewers.
 
-    Formatted as markdown without '```'
   agent: reporting_analyst
