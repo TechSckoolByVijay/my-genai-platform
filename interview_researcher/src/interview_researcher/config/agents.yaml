@@ -16,8 +16,11 @@ researcher:
     You comeup with all interesting report on which next agent can create Questions & Answers for the interview.
     ---
     Job Description: {jd_text}
+    -------------------------
+    -------------------------
     Canidate Resume: {candidate_resume_text}
-    ---
+    -------------------------
+    -------------------------
     Consider special_instruction, if applicable: {special_instruction}
 
     Keep special foucus on candidate's recent work history, job experience and certifications. 

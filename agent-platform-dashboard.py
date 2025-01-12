@@ -3,6 +3,7 @@ from streamlit_chat import message
 import sys
 import os
 import io
+from datetime import datetime 
 from dotenv import load_dotenv
 
 st.set_page_config(layout="wide")
@@ -308,21 +309,32 @@ BITS Pilani, Pilani campus
             # Display each log with appropriate CSS class
             st.markdown(f'<div class="log-box"><span class="log-info">{verbose_logs}</span></div>', unsafe_allow_html=True)
 
-
         # Display the final result from the agent
-        st.subheader("Final Message:")
+        #st.subheader("Your interview Q&A report")
         st.success(final_message)
-
-        # # Display the collected inputs
-        # st.subheader("Input Summary:")
-        # st.write(f"Job Description (Text): {jd_text[:200]}...")  # Show a preview of the JD text
-        # st.write(f"Candidate Resume (Text): {candidate_resume_text[:200]}...")  # Show a preview of the candidate resume text
-        # st.write(f"System Message: {system_message}")
-        # st.write(f"Temperature Setting: {temperature}")
-
-
-
-
+        message_data = str(final_message)
+        # #formatted_message = message_data.replace("\n", "<br>")
+        
+        # st.markdown(
+        #     f"""
+        #     <div style="
+        #         background: linear-gradient(145deg, #1E1E1E, #252525); 
+        #         color: #D3D3D3; 
+        #         padding: 20px; 
+        #         border-radius: 10px; 
+        #         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
+        #         font-family: 'Roboto', sans-serif; 
+        #         font-size: 14px; 
+        #         line-height: 1.6;">
+                
+        #         {message_data}
+        #         <br><br>
+        #         </div>
+        #     """,
+        #     unsafe_allow_html=True
+        # )
+        
+    
 # else:
 #     st.title(f"{selected_feature}")
 
