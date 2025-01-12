@@ -5,6 +5,8 @@ import os
 import io
 from dotenv import load_dotenv
 
+st.set_page_config(layout="wide")
+
 sys.path.append(os.path.join(os.getcwd(), 'interview_researcher/src'))
 # Import the CrewAI agent modules
 from interview_researcher import main
@@ -58,6 +60,7 @@ st.markdown("""
 
 
 st.sidebar.title("Feature Selection")
+
 features = ["SmartHire", "InterQCoach", "Resume Categorization","None"]
 #selected_feature = st.sidebar.radio("Select a feature", features)
 selected_feature = st.sidebar.selectbox("Select a feature",features)
