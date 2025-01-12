@@ -285,7 +285,7 @@ BITS Pilani, Pilani campus
     temperature = st.slider("Set Temperature", min_value=0.0, max_value=1.0, value=0.5, key="hire_smart_temperature")
     special_instruction = st.text_input("Special Instruction for Agent", placeholder="pecial Instruction for Agent", value="nothing for now")
     trigger_button = st.button("Trigger CrewAI Agent")
-
+    
     if trigger_button:
         # Capture the agent's output and verbose logs
         final_message, verbose_logs = run_and_capture_agent()
@@ -310,7 +310,7 @@ BITS Pilani, Pilani campus
             st.markdown(f'<div class="log-box"><span class="log-info">{verbose_logs}</span></div>', unsafe_allow_html=True)
 
         # Display the final result from the agent
-        #st.subheader("Your interview Q&A report")
+        st.markdown('<br><h3 style="color: #00FFCC; font-family: Arial, sans-serif;">Your interview Q&A report</h3>', unsafe_allow_html=True)
         st.success(final_message)
         message_data = str(final_message)
         # #formatted_message = message_data.replace("\n", "<br>")
