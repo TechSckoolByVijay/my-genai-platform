@@ -3,10 +3,10 @@ import sys
 import os
 from dotenv import load_dotenv
 
-sys.path.append(os.path.join(os.getcwd(), 'interview_researcher/src'))
+sys.path.append(os.path.join(os.getcwd(), 'crews/interview_researcher/src'))
 from interview_researcher import main
 
-load_dotenv(os.path.join(os.getcwd(), 'interview_researcher', '.env'))
+load_dotenv(os.path.join(os.getcwd(), 'crews/interview_researcher', '.env'))
 
 def run_and_capture_agent(jd_text, candidate_resume_text):
     # Create a StringIO buffer to capture stdout
