@@ -1,0 +1,31 @@
+clone_repository_task:
+  description: >
+    Download the GitHub repository from the given URL and save it to the specified directory. Ensure the download is successful, and log any issues encountered.
+    URL: {repo_url}
+    Directory: {output_dir}
+  expected_output: >
+    The GitHub repository should be downloaded successfully and saved as a zip file in the specified directory. The final output is the file path of the downloaded repository.
+  agent: repository_downloader
+
+analyze_script_task:
+  description: >
+    Analyze a script file to extract metadata and usage details, including:
+    - Purpose of the script
+    - Inputs and outputs
+    - Dependencies
+    - Example usage
+  expected_output: >
+    A structured dictionary with all extracted details about the script.
+  agent: script_analyzer
+
+generate_readme_task:
+  description: >
+    Generate a structured README.md file for a script using the extracted details.
+    The file should include:
+    - Purpose of the script
+    - Inputs and outputs
+    - Dependencies
+    - Example usage
+  expected_output: >
+    A README.md file saved alongside the script in the local directory.
+  agent: documentation_writer

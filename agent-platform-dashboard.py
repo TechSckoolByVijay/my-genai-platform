@@ -62,7 +62,7 @@ st.markdown("""
 
 st.sidebar.title("Feature Selection")
 
-features = ["SmartHire", "InterQCoach", "Resume Categorization","None"]
+features = ["SmartHire", "DocGenBuddy", "InterQCoach", "Resume Categorization","None"]
 #selected_feature = st.sidebar.radio("Select a feature", features)
 selected_feature = st.sidebar.selectbox("Select a feature",features)
 
