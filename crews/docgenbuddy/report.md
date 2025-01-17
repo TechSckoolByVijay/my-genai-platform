@@ -1,7 +1,67 @@
-{
-  "Purpose": "The purpose of this script is to perform a specific task or set of tasks. It could be to automate a process, process a file, manipulate data, or perform calculations, among other possibilities.",
-  "Inputs": "The inputs to the script are the data or information required for it to perform its tasks. This can include command-line arguments, user inputs, configuration files, or data files.",
-  "Outputs": "The outputs of the script are the results or generated data produced by the script. This can include console outputs, log files, modified or new files, or any other form of data or information.",
-  "Dependencies": "The script may require external dependencies or libraries to function properly. These dependencies could be specific packages, modules, or libraries that need to be installed and imported for the script to work.",
-  "Example Usage": "Example usage of the script can provide a practical demonstration of how to use it. It may include command-line examples, code snippets, or step-by-step instructions for running the script with specific inputs and expected outputs."
-}
+# README
+
+## Script Name: [script_name]
+
+### Purpose:
+
+[Provide a brief description of the purpose of the script]
+
+### Usage:
+
+```
+[Provide command-line example(s) demonstrating how to use the script]
+```
+
+### Prerequisites:
+
+[Specify any software or dependencies required for the script to run successfully]
+
+### Installation:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/Learning-Lab/interviewer-researcher.git
+   ```
+
+2. Navigate to the script directory:
+
+   ```
+   cd interviewer-researcher/docgenbuddy/out
+   ```
+
+### Configuration:
+
+[Specify any configuration settings that need to be modified or set before running the script]
+
+### Execution:
+
+[Describe the steps required to execute the script and any additional command-line options or arguments]
+
+### Output:
+
+[Describe the expected output and any files or directories that will be generated]
+
+### Examples:
+
+[Provide example usages of the script with different input scenarios]
+
+### Troubleshooting:
+
+[Document any common issues or errors that might occur during script execution and provide possible solutions]
+
+### License:
+
+[Specify the license under which the script is distributed]
+
+### Credits:
+
+[Provide credits to the authors or sources of any referenced code snippets or inspiration]
+
+### Related Documentation:
+
+[Include links or references to any related documentation or resources]
+
+---
+
+Please note that the above template is just a suggestion. You can customize the structure and content of the README.md file according to the specific needs and requirements of the scripts.

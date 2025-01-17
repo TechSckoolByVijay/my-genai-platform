@@ -2,7 +2,7 @@
 import sys
 import warnings
 
-from docgenbuddy.crew import Docgenbuddy
+from project_progress_report.crew import ProjectProgressReport
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -16,10 +16,9 @@ def run():
     Run the crew.
     """
     inputs = {
-        'repo_url': 'https://github.com/TechSckoolByVijay/Conversational-Insights-WhatsApp-Chat-Analysis-OpenAI-Q-A-Integration',
-        'output_dir':"C:\Learning Lab\interviewer-researcher\docgenbuddy\out"
+        'topic': 'AI LLMs'
     }
-    Docgenbuddy().crew().kickoff(inputs=inputs)
+    ProjectProgressReport().crew().kickoff(inputs=inputs)
 
 
 def train():
@@ -30,7 +29,7 @@ def train():
         "topic": "AI LLMs"
     }
     try:
-        Docgenbuddy().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        ProjectProgressReport().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -40,7 +39,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        Docgenbuddy().crew().replay(task_id=sys.argv[1])
+        ProjectProgressReport().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -53,7 +52,7 @@ def test():
         "topic": "AI LLMs"
     }
     try:
-        Docgenbuddy().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        ProjectProgressReport().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
