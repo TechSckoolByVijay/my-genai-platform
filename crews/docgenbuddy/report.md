@@ -1,67 +1,62 @@
-# README
+## CSV_manipulation.ps1
 
-## Script Name: [script_name]
+This script is used for manipulating CSV data. It performs the following operations:
 
-### Purpose:
+1. Imports a CSV file named 'sample.csv' using the 'Import-Csv' cmdlet.
+2. Filters and retrieves records where the SalaryGrade starts with 'A'.
+3. Filters and retrieves records where the SalaryGrade starts with 'A' and the Department is 'CS'.
+4. Replaces the SalaryGrade value with 'High' if it starts with 'A' and with 'Medium' if it starts with 'B'.
+5. Adds a new row to the data with values for EmployeeName, Role, Department, and SalaryGrade.
+6. Adds a new column 'Group' based on the 'Department' value. Employees in the 'Sales' department are assigned to the 'Non-Technical' group, while others are assigned to the 'Technical' group.
+7. Removes all columns from the data except for the selected columns.
+8. Exports the modified data to a CSV file named 'sample.csv'.
 
-[Provide a brief description of the purpose of the script]
+### Prerequisites
 
-### Usage:
+- PowerShell
+
+### Usage
+
+1. Open a PowerShell terminal.
+2. Navigate to the directory containing the script: `cd C:\Learning Lab\my-genai-platform\out`.
+3. Run the script: `.\CSV_manipulation.ps1`.
+
+### Script Execution Flow
+
+1. Import the 'sample.csv' file using the 'Import-Csv' cmdlet.
+2. Filter the data to fetch records where the SalaryGrade starts with 'A'.
+3. Filter the data to fetch records where the SalaryGrade starts with 'A' and the Department is 'CS'.
+4. Replace the SalaryGrade value with 'High' if it starts with 'A' and with 'Medium' if it starts with 'B'.
+5. Add a new row to the data with values for EmployeeName, Role, Department, and SalaryGrade.
+6. Add a new column 'Group' based on the 'Department' value.
+7. Assign employees in the 'Sales' department to the 'Non-Technical' group.
+8. Assign employees in other departments to the 'Technical' group.
+9. Remove all columns from the data, except for the selected columns.
+10. Export the modified data to the 'sample.csv' file.
+
+### Example
+
+Input:
 
 ```
-[Provide command-line example(s) demonstrating how to use the script]
+EmployeeName,Role,Department,SalaryGrade
+John Doe,Manager,CS,A1
+Jane Smith,Developer,IT,B2
 ```
 
-### Prerequisites:
+Output:
 
-[Specify any software or dependencies required for the script to run successfully]
+```
+EmployeeName,Role,Department,SalaryGrade,Group
+John Doe,Manager,CS,High,Technical
+Jane Smith,Developer,IT,Medium,Non-Technical
+NewName,PowerShell,Platform,Highest,Technical
+```
 
-### Installation:
+### Notes
 
-1. Clone the repository:
+- Make sure to replace the 'sample.csv' file in the script with your actual CSV file name if it differs.
+- This script assumes that the 'sample.csv' file exists in the same directory as the script.
+- The script will overwrite the 'sample.csv' file with the modified data.
 
-   ```
-   git clone https://github.com/Learning-Lab/interviewer-researcher.git
-   ```
-
-2. Navigate to the script directory:
-
-   ```
-   cd interviewer-researcher/docgenbuddy/out
-   ```
-
-### Configuration:
-
-[Specify any configuration settings that need to be modified or set before running the script]
-
-### Execution:
-
-[Describe the steps required to execute the script and any additional command-line options or arguments]
-
-### Output:
-
-[Describe the expected output and any files or directories that will be generated]
-
-### Examples:
-
-[Provide example usages of the script with different input scenarios]
-
-### Troubleshooting:
-
-[Document any common issues or errors that might occur during script execution and provide possible solutions]
-
-### License:
-
-[Specify the license under which the script is distributed]
-
-### Credits:
-
-[Provide credits to the authors or sources of any referenced code snippets or inspiration]
-
-### Related Documentation:
-
-[Include links or references to any related documentation or resources]
-
----
-
-Please note that the above template is just a suggestion. You can customize the structure and content of the README.md file according to the specific needs and requirements of the scripts.
+Download the script: [CSV_manipulation.ps1](./CSV_manipulation.ps1)

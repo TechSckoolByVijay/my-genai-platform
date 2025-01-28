@@ -1,8 +1,9 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.tools import BaseTool
-from crewai_tools import DirectoryReadTool
+from crewai_tools import DirectoryReadTool, FileReadTool
 
+import os
 # Tool for cloning GitHub repositories
 class GitCloneTool(BaseTool):
     name: str = "git clone tool"
@@ -22,6 +23,18 @@ class GitCloneTool(BaseTool):
         except subprocess.CalledProcessError as e:
             return f"Error cloning repository: {str(e)}"
 
+class List_and_Read_Files(BaseTool):
+    name: str = "List and Read files"
+    description: str = "List the required files at 'output_dir' and read them. "
+
+    def _run(self,directory_path: str):
+        file_data = {}
+        for root, _, files in os.walk(directory_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    file_data[file] = f.read()
+        return file_data
 
 @CrewBase
 class Docgenbuddy():
@@ -47,7 +60,8 @@ class Docgenbuddy():
 	def script_analyzer(self) -> Agent:
 		return Agent(
 			config=self.agents_config['script_analyzer'],
-			tools=[DirectoryReadTool()],
+			tools=[DirectoryReadTool(),FileReadTool(),List_and_Read_Files()],
+			#tools=[List_and_Read_Files()],
 			verbose=True
 		)
 	
@@ -68,10 +82,15 @@ class Docgenbuddy():
 		)
 
 	@task
+	def create_list_of_scripts(self) -> Task:
+		return Task(
+			config=self.tasks_config['create_list_of_scripts']
+		)
+	
+	@task
 	def analyze_script_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['analyze_script_task'],
-			output_file='report.md',
+			config=self.tasks_config['analyze_script_task']
 		)
 	@task
 	def generate_readme_task(self) -> Task:

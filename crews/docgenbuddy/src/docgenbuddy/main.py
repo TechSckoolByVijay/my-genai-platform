@@ -16,8 +16,8 @@ def run():
     Run the crew.
     """
     inputs = {
-        'repo_url': 'https://github.com/TechSckoolByVijay/Conversational-Insights-WhatsApp-Chat-Analysis-OpenAI-Q-A-Integration',
-        'output_dir':"C:\Learning Lab\interviewer-researcher\docgenbuddy\out"
+        'repo_url': 'https://github.com/TechSckoolByVijay/PowerShell-Scripts',
+        'output_dir':"'C:\Learning Lab\my-genai-platform\out'"
     }
     Docgenbuddy().crew().kickoff(inputs=inputs)
 

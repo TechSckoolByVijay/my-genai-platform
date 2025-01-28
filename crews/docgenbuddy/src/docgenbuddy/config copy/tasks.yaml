@@ -8,24 +8,12 @@ clone_repository_task:
     Dont forget to pass the URL and Directory to the gitclone tool.
   agent: repository_downloader
 
-create_list_of_scripts:
-  description: >
-    Since you have clonned a repository at Directory, it is time to create a script of files to be analyzed.
-    Make sure you recursively analyze all the sub directories as well. 
-
-    Directory: {output_dir}
-    While creating the list ignore .git folder . this folder is not supposed to be analyzed.
-  expected_output: >
-    List of scripts available at Directory: {output_dir}
-  agent: script_analyzer
-
-
 analyze_script_task:
   description: >
+    Now since you have clonned a repository at path: 
+
     Directory: {output_dir}
-    Ignore .git folder please
     You should read each script file available and analyze to prepare the detailed documentation.
-    
     While analyzing the script make sure you are able to grab all the details which are necessary for next
     developer to start the development after going through your analysis report.
   expected_output: >
