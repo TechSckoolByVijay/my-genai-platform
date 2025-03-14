@@ -11,3 +11,5 @@ python-dotenv
 PyPDF2
 
 tweepy
+
+langsmith
