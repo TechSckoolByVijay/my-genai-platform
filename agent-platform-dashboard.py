@@ -4,15 +4,15 @@ from features import smart_hire,doc_gen_buddy
 from ui_utils.custom_css import apply_custom_css
 
 
-import os
-import sys
-from dotenv import load_dotenv
+# import os
+# import sys
+# from dotenv import load_dotenv
 
 #from crews.interview_researcher.src.interview_researcher.main import main
-load_dotenv()
-os.environ['LANGCHAIN_TRACING_V2']=os.getenv('LANGCHAIN_TRACING_V2')
-os.environ['LANGCHAIN_API_KEY']=os.getenv('LANGCHAIN_API_KEY')
-os.environ['LANGCHAIN_PROJECT']=os.getenv('LANGCHAIN_PROJECT')
+# load_dotenv()
+# os.environ['LANGCHAIN_TRACING_V2']=os.getenv('LANGCHAIN_TRACING_V2')
+# os.environ['LANGCHAIN_API_KEY']=os.getenv('LANGCHAIN_API_KEY')
+# os.environ['LANGCHAIN_PROJECT']=os.getenv('LANGCHAIN_PROJECT')
 
 st.set_page_config(layout="wide")
 
