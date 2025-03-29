@@ -1,0 +1,44 @@
+clone_repository_task:
+  description: >
+    Download the GitHub repository from the given URL and save it to the specified directory. Ensure the download is successful, and log any issues encountered.
+    URL: {repo_url}
+    Directory: {output_dir}
+  expected_output: >
+    The GitHub repository should be downloaded successfully and saved as a zip file in the specified directory. The final output is the file path of the downloaded repository.
+    Dont forget to pass the URL and Directory to the gitclone tool.
+  agent: repository_downloader
+
+create_list_of_scripts:
+  description: >
+    Since you have clonned a repository at Directory, it is time to create a script of files to be analyzed.
+    Make sure you recursively analyze all the sub directories as well. 
+
+    Directory: {output_dir}
+    While creating the list ignore .git folder . this folder is not supposed to be analyzed.
+  expected_output: >
+    List of scripts available at Directory: {output_dir}
+  agent: script_analyzer
+
+
+analyze_script_task:
+  description: >
+    Directory: {output_dir}
+    Ignore .git folder please
+    You should read each script file available and analyze to prepare the detailed documentation.
+    
+    While analyzing the script make sure you are able to grab all the details which are necessary for next
+    developer to start the development after going through your analysis report.
+  expected_output: >
+    A detailed knowledge of the scripts available at Directory: {output_dir}
+  agent: script_analyzer
+
+generate_readme_task:
+  description: >
+    Generate a structured README.md file for the scripts available at the clonned {output_dir}.
+    The file should contain a detailed flow of the script. and what script does.
+    Purpose of the script:
+    What is the use of this script:
+    Script Description for next developer:
+  expected_output: >
+    A README.md file saved alongside the script in the local directory.
+  agent: documentation_writer

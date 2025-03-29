@@ -1,0 +1,23 @@
+[project]
+name = "webparsepro"
+version = "0.1.0"
+description = "WebParsePro using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.95.0,<1.0.0"
+]
+
+[project.scripts]
+webparsepro = "webparsepro.main:run"
+run_crew = "webparsepro.main:run"
+train = "webparsepro.main:train"
+replay = "webparsepro.main:replay"
+test = "webparsepro.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

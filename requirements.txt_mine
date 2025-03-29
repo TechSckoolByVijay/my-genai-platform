@@ -1,0 +1,15 @@
+crewai
+crewai_tools
+langchain_community
+crewai[tools]
+
+streamlit_chat
+streamlit
+
+pandas
+python-dotenv
+PyPDF2
+
+tweepy
+
+langsmith
