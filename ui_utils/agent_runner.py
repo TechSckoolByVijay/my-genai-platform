@@ -3,6 +3,10 @@ import sys
 import os
 from dotenv import load_dotenv
 
+def run_and_capture_agent():
+    pass
+    # this is the place to call APIs
+
 # sys.path.append(os.path.join(os.getcwd(), 'crews/interview_researcher/src'))
 # from interview_researcher import main
 
