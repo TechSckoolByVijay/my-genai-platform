@@ -1,12 +1,3 @@
-import sys
-import os
-
-# Get the absolute path of the current directory
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "features")))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "ui_utils")))
-
-
 import streamlit as st
 from features import smart_hire,doc_gen_buddy
 #, doc_gen_buddy, inter_q_coach, resume_categorization
