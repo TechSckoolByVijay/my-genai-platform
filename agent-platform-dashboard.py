@@ -21,6 +21,7 @@ features = [ "None","SmartHire", "Keto Diet Planner", "Stock Market", "DocGenBud
 selected_feature = st.sidebar.selectbox("Select a feature", features)
 
 
+
 # Apply custom CSS
 apply_custom_css()
 
