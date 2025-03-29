@@ -1,5 +1,5 @@
 import streamlit as st
-#from features import smart_hire,doc_gen_buddy
+from features import smart_hire,doc_gen_buddy
 #, doc_gen_buddy, inter_q_coach, resume_categorization
 from ui_utils.custom_css import apply_custom_css
 
