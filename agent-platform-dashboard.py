@@ -28,11 +28,11 @@ apply_custom_css()
 if selected_feature == "None":
     st.title("Welcome to Vijay's GenAI experiments")
 elif selected_feature == "SmartHire":
-    pass
-    #smart_hire.display()
+    #pass
+    smart_hire.display()
 elif selected_feature == "DocGenBuddy":
-    pass
-    #doc_gen_buddy.display()
+    #pass
+    doc_gen_buddy.display()
 # elif selected_feature == "InterQCoach":
 #     inter_q_coach.display()
 # elif selected_feature == "Resume Categorization":
