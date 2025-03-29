@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 sys.path.append(os.path.join(os.getcwd(), 'crews/interview_researcher/src'))
 print("Python Path:", sys.path)
 
-#from interview_researcher import main
+from interview_researcher import main
 
-from crews.interview_researcher.src.interview_researcher import main
+#from crews.interview_researcher.src.interview_researcher import main
 
 
 #from crews.interview_researcher.src.interview_researcher.main import main
